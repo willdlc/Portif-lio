@@ -1,0 +1,37 @@
+git remote remove origin (remove o repositorio)
+
+
+
+git init (iniciar o repositório local)
+git remote add origin "https: site bitbuchet" ()
+git add . (add pra subir)
+git config --global user.email ""
+git config --global user.name ""
+git commit -m "primeiro blablabla"
+git push origin master
+git status
+git clone https://wilbertdener@bitbucket.org.....
+
+
+
+3 sempre
+git add .
+git commit -m "mensagem"
+git push origin master
+
+
+restaurar
+git restore --staged .
+git restore .
+
+
+puxar branch
+git checkout --track -b luana origin/luana
+git branch
+
+
+subir em outro repositorio
+git push link.git master -f
+
+
+ATBBfv8j5CTSf9N9kRw3Yr5V66fVBD055960
