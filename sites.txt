@@ -1,0 +1,5 @@
+html
+https://codepen.io/hmaesta/pen/PoNJeBz
+https://fontawesome.com/icons/clock?f=classic&s=regular&sz=2xl&pc=%23000000
+https://www.php.net/manual/en/function.strtotime.php
+https://www.delftstack.com/pt/howto/javascript/remove-last-character-from-javascript/
