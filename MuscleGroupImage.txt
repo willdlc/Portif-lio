@@ -1,0 +1,34 @@
+#https://rapidapi.com/mertronlp/api/muscle-group-image-generator/tutorials/create-a-dynamic-muscle-group-image-component-in-react
+import {useEffect, useState} from "react";
+import axios from "axios";
+
+interface MuscleGroupImageProps {
+    muscleGroups: Array<string>
+}
+
+export default function MuscleGroupImage(props: MuscleGroupImageProps) {
+    const [image, setImage] = useState("");
+
+    const fetchImage = async() => {
+        axios.get(`https://muscle-group-image-generator.p.rapidapi.com/getImage?muscleGroups=${props.muscleGroups.join(",")}`, {
+            headers: {
+                'X-RapidAPI-Key': '<YOUR_RAPIDAPI_KEY>',
+                'X-RapidAPI-Host': 'muscle-group-image-generator.p.rapidapi.com',
+            },
+            responseType: "arraybuffer"
+        }).then((response) => {
+            const imageFile = new Blob([response.data]);
+            const imageUrl = URL.createObjectURL(imageFile);
+            setImage(imageUrl)
+        });
+    }
+
+    useEffect(() => {
+        fetchImage()
+    }, [])
+
+    return <img src={image} alt={`Image of ${props.muscleGroups.join(",")}`} />
+}
+#You can the embed the image anywhere in your react application like this:
+
+#<MuscleGroupImage muscleGroups={["biceps", "triceps", "hamstring"]} />
